@@ -2,12 +2,23 @@ package com.example.myapplication;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.media.Image;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.TextView;
+
+import java.util.Calendar;
 
 public class MainActivity extends AppCompatActivity {
-    public void buttonisClicked(View buttonView){
+
+    public void buttonisClicked(View buttonView) {
+        ImageView myImage = findViewById(R.id.img);
+        EditText UserNumber = findViewById(R.id.UserNumber);
+        int petAge = Calendar.getInstance().get(Calendar.YEAR) - Integer.parseInt(UserNumber.getText().toString());
+        UserNumber.setText(petAge + "");
+    }
 //        int result= 5*7;
 //        Log.i("OPERATIONAL", result +"");
 //        TextView txt = findViewById(R.id.text);
@@ -19,10 +30,10 @@ public class MainActivity extends AppCompatActivity {
 //        Toast.makeText(MainActivity.this,"This is TOAST message", Toast.LENGTH_SHORT).show();
 //        Toast.makeText(MainActivity.this, "Your name is: "+edtText.getText().toString()+"\n"+
 //                "Your phone Number: "+ edtPhoneNumber.getText().toString(), Toast.LENGTH_SHORT).show();
-        ImageView myImage = findViewById(R.id.img);
-        myImage.setImageResource(R.drawable.locomotive);
+//        ImageView myImage = findViewById(R.id.img);
+//        myImage.setImageResource(R.drawable.locomotive);
 
-    }
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
